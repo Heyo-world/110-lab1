@@ -1,0 +1,3 @@
+As a player, I want to see the day’s weather forecast so I can decide my batch size for the day.
+As a player, I want to see the cost per cup so I can decide my prices for the day.
+As a player, I want to see my earnings at the end of the day so I can see my progression.
