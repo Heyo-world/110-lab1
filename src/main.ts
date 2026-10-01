@@ -57,16 +57,16 @@ async function sellingPricePrompt(){
 }
 
 function getCupsSold(weather:string){
-        let cupsSold = 0;
-        if(weather == "sunny"){
-		cupsSold = getRandomInt(3, 9);
-        }
-        if(weather == "cloudy"){
-                cupsSold = getRandomInt(1, 6);
-        }
-        if(weather == "hot and dry"){
+    let cupsSold = 0;
+    if(weather == "sunny"){
+		cupsSold = getRandomInt(3, 9);        
+	}
+	if(weather == "cloudy"){
+            cupsSold = getRandomInt(1, 6);
+    }
+	if(weather == "hot and dry"){
 		cupsSold = getRandomInt(6, 15);
-        }
+    }
         
 
 	if(cupsSold > cupsMade){
