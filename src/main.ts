@@ -17,7 +17,6 @@ function getRandomInt(min: number, max: number):number{
 }
 
 function getWeather(randomInt: number){
-	//const randomInt = getRandomInt(1,3);
 	if(randomInt == 1){
 		return "sunny";
 	}
