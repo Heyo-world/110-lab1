@@ -17,6 +17,7 @@ function getRandomInt(min: number, max: number):number{
 }
 
 function getWeather(randomInt: number){
+	//const randomInt = getRandomInt(1,3);
 	if(randomInt == 1){
 		return "sunny";
 	}
@@ -57,17 +58,16 @@ async function sellingPricePrompt(){
 }
 
 function getCupsSold(weather:string){
-    let cupsSold = 0;
-    if(weather == "sunny"){
-		cupsSold = getRandomInt(3, 9);        
+	let cupsSold = 0;
+	if(weather == "sunny"){
+		cupsSold = getRandomInt(3, 9);
 	}
 	if(weather == "cloudy"){
-            cupsSold = getRandomInt(1, 6);
-    }
+			cupsSold = getRandomInt(1, 6);
+	}
 	if(weather == "hot and dry"){
 		cupsSold = getRandomInt(6, 15);
-    }
-        
+	}
 
 	if(cupsSold > cupsMade){
 		return cupsMade;
@@ -85,13 +85,14 @@ function getTotalProfit(totalEarned:number, totalSpending:number){
 	return profit;
 }
 
-
-const randomInt = getRandomInt(1,3);
-let weather:string = getWeather(randomInt);
-console.log("Today's Weather: " + weather);
-
+//Call functions
 
 (async () => {
+	const randomInt = getRandomInt(1,3);
+	let weather:string = getWeather(randomInt);
+	console.log("Today's Weather: " + weather);
+
+	console.log('Current balance: ' + balance + ' cents.');
 	console.log('Cost to make each cup is ' + costPerCupInCents + ' cents.');
 	console.log('Cost to make each adversitsment sign is ' + costPerAdSign + ' cents.\n');
 
@@ -119,5 +120,3 @@ console.log("Today's Weather: " + weather);
 	console.log('Total profit (In Cents): ' + totalProfit);
 	console.log('Final balance (In Cents): ' + balance);
 })();
-
-
