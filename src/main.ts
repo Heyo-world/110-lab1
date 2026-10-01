@@ -17,17 +17,16 @@ function getRandomInt(min: number, max: number):number{
 }
 
 function getWeather(randomInt: number){
-	//const randomInt = getRandomInt(1,3);
 	if(randomInt == 1){
-		return "sunny";
+		return "Sunny";
 	}
 	if(randomInt == 2){
-		return "cloudy";
+		return "Cloudy";
 	}
 	if(randomInt == 3){
-		return "hot and dry";
+		return "Hot and dry";
 	}
-	return "unknown weather";
+	return "Unknown weather";
 }
 
 //Save user's spending based on: How many cups were made, Number of ad signs made
@@ -59,13 +58,13 @@ async function sellingPricePrompt(){
 
 function getCupsSold(weather:string){
 	let cupsSold = 0;
-	if(weather == "sunny"){
+	if(weather == "Sunny"){
 		cupsSold = getRandomInt(3, 9);
 	}
-	if(weather == "cloudy"){
+	if(weather == "Cloudy"){
 			cupsSold = getRandomInt(1, 6);
 	}
-	if(weather == "hot and dry"){
+	if(weather == "Hot and dry"){
 		cupsSold = getRandomInt(6, 15);
 	}
 
