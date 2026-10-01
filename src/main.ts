@@ -89,25 +89,36 @@ function getTotalProfit(totalEarned:number, totalSpending:number){
 
 const randomInt = getRandomInt(1,3);
 let weather:string = getWeather(randomInt);
-console.log(weather);
+console.log("Today's Weather: " + weather);
 
 
 (async () => {
+	console.log('Cost to make each cup is ' + costPerCupInCents + ' cents.');
+	console.log('Cost to make each adversitsment sign is ' + costPerAdSign + ' cents.\n');
+
 	await spendingPrompt();
-	console.log('Cups Made: ' + cupsMade);
-	console.log('Ad Signs Made: ' + adsMade);
 	let totalSpent = getTotalSpending(cupsMade, adsMade);
-	console.log('Total Spent This Day: ' + totalSpent);
+	console.log('Total Spent This Day (In Cents): ' + totalSpent);
 
 	await sellingPricePrompt();
-	console.log('Price Per Cup: ' + pricePerCup);
+	console.log('Price Per Cup (In Cents): ' + pricePerCup);
 
 	const cupsSold = getCupsSold(weather);
+	console.log('Total Cups Sold: ' + cupsSold);
+
+	const cupsLeft = cupsMade - cupsSold;
+	if(cupsLeft > 0){
+		console.log('Total Cups Left: ' + cupsLeft);
+	}
+	else{
+		console.log('Total Cups Left: 0');
+	}
+	
 	const totalEarned = getTotalEarned(cupsSold);
 	const totalSpending = getTotalSpending(cupsMade, adsMade);
 	const totalProfit = getTotalProfit(totalEarned, totalSpending);
-	console.log('Total profit: ' + totalProfit);
-	console.log('Final balance: ' + balance);
+	console.log('Total profit (In Cents): ' + totalProfit);
+	console.log('Final balance (In Cents): ' + balance);
 })();
 
 
